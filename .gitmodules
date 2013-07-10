@@ -4,3 +4,9 @@
 [submodule "bundle/vimspeak"]
 	path = bundle/vimspeak
 	url = git@github.com:mhameed/vimspeak
+[submodule "bundle/vim-gnupg"]
+	path = bundle/vim-gnupg
+	url = https://github.com/jamessan/vim-gnupg
+[submodule "bundle/vim-unicodeBraille"]
+	path = bundle/vim-unicodeBraille
+	url = https://github.com/mhameed/vim-unicodeBraille
