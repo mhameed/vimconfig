@@ -1,0 +1,45 @@
+# Using bugzilla email template
+# products, milestones etc apply to personal bugzilla instance at bugzilla.mesarhameed.info
+
+snippet _thesis "Create a thesis ticket" b
+@product = thesis
+@component = writeup
+@op_sys = Linux
+@rep_platform = Other
+@version = unspecified
+@status = IN_PROGRESS
+
+${1:Long description}
+$0
+endsnippet
+
+snippet _misc "Create a misc ticket" b
+@product = misc
+@component = misc
+@op_sys = Linux
+@rep_platform = Other
+@version = unspecified
+@status = IN_PROGRESS
+
+${1:Long description}
+$0
+endsnippet
+
+snippet _wontfix "Mark as wontfix" b
+@status = RESOLVED
+@resolution = WONTFIX
+@target_milestone = `!v strftime("%y%m")`
+
+${1:reason}
+$0
+endsnippet
+
+snippet _fixed "Mark as fixed" b
+@status = RESOLVED
+@resolution = FIXED
+@target_milestone = `!v strftime("%y%m")`
+
+Fixed by ${1:hash}
+$0
+endsnippet
+
