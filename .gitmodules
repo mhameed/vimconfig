@@ -10,3 +10,6 @@
 [submodule "bundle/vim-unicodeBraille"]
 	path = bundle/vim-unicodeBraille
 	url = https://github.com/mhameed/vim-unicodeBraille
+[submodule "bundle/vim-fugitive"]
+	path = bundle/vim-fugitive
+	url = http://github.com/tpope/vim-fugitive
