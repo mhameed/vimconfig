@@ -13,3 +13,6 @@
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
 	url = http://github.com/tpope/vim-fugitive
+[submodule "bundle/python-mode"]
+	path = bundle/python-mode
+	url = https://github.com/klen/python-mode
