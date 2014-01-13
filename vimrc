@@ -80,9 +80,8 @@ nnoremap ; :
 nnoremap : <NOP>
 nnoremap <leader>; ;
 
-
-nnoremap q :q<cr>
-nnoremap <leader>q q
+""" nnoremap <leader>q q
+""" nnoremap q :q<cr>
 
 "Train mussle memory, make it extra irritating to move more than 1 char in either direction.
 "we can get there faster by not using arrow keys.
@@ -154,5 +153,32 @@ source ~/.vim/autocorrect.vim
 source ~/.vim/preferedIndent.vim
 set foldmethod=indent
 set foldlevelstart=1
+
+function! s:RunShellCommand(cmdline)
+  botright lwindow
+"  lexpr system(escape(a:cmdline,'%#'))
+  lexpr system(a:cmdline)
+  lopen
+  1
+endfunction
+
+command -complete=file Test call s:RunShellCommand('python '.expand('%'))
+command -complete=file Pylint call s:RunShellCommand('pylint '.expand('%'))
+
+let g:pymode_folding = 0
+let g:pymode_lint_signs = 0
+let g:pymode_options = 0
+
+" Map key to toggle opt taken from:
+" http://vim.wikia.com/wiki/Quick_generic_option_toggling
+function MapToggle(key, opt)
+  let cmd = ':set '.a:opt.'! \| set '.a:opt."?\<CR>"
+  exec 'nnoremap '.a:key.' '.cmd
+  exec 'inoremap '.a:key." \<C-O>".cmd
+endfunction
+command -nargs=+ MapToggle call MapToggle(<f-args>)
+
+" Display-altering option toggles
+MapToggle <leader>l number
 
 " vim: foldmethod=marker foldlevel=0
