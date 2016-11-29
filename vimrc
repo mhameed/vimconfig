@@ -181,4 +181,10 @@ command -nargs=+ MapToggle call MapToggle(<f-args>)
 " Display-altering option toggles
 MapToggle <leader>l number
 
+""" vimdiff opts: 
+"{{{
+
+set diffopt=horizontal,filler,foldcolumn:1
+"}}}
+
 " vim: foldmethod=marker foldlevel=0
